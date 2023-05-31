@@ -12,11 +12,16 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatTabsModule} from '@angular/material/tabs';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { LogsComponent } from './components/logs/logs.component';
+import { ServicesModule } from './modules/services/services.module';
+import { BaseComponent } from './core/base/base.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent
+    DashboardComponent,
+    LogsComponent,
+    BaseComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +31,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     MatIconModule,
     MatButtonModule,
     MatMenuModule,
-    MatTabsModule
+    MatTabsModule,
+    ServicesModule
   ],
   providers: [],
   bootstrap: [AppComponent]
