@@ -8,6 +8,6 @@ import { BaseComponent } from 'src/app/core/base/base.component';
 })
 export class Test2Component extends BaseComponent {
 
-  override cname: string = 'INTERVENTIONS DETAIL';
+  override cname: string = 'INTERVENTION 1';
 
 }

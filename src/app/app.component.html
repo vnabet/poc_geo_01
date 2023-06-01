@@ -62,7 +62,7 @@ aaa
 </mat-tab-group> -->
 
 <nav mat-tab-nav-bar [tabPanel]="tabPanel">
-  <a mat-tab-link *ngFor="let link of links" [active]="link.url === activeLink" (click)="activeLink = link.url" [routerLink]="link.url">{{link.label}}</a>
+  <a mat-tab-link *ngFor="let link of links" [active]="link.route === activeLink" (click)="activeLink = link.route" [routerLink]="link.route">{{link.label}}</a>
 </nav>
 <mat-tab-nav-panel #tabPanel>
   <router-outlet></router-outlet>
