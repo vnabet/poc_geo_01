@@ -2,13 +2,15 @@ import { Component } from '@angular/core';
 import { NavigationStart, Router } from '@angular/router';
 import {filter} from 'rxjs'
 import { LogsService } from './modules/services/logs.service';
+import { BaseComponent } from './core/base/base.component';
 
+// declare var Module: any;
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent extends BaseComponent {
   links:{label:string, route?:string, tab?:null|number, module:string}[] = [
     {label: 'Dashboard', module: '', tab: null},
     {label: 'Parcellaire', module: 'parcellaire'},
@@ -18,7 +20,13 @@ export class AppComponent {
 
   private _tabIndex:number = 0;
 
-  constructor(private router: Router, private logsService:LogsService) {
+  override cname: string = 'APP';
+
+  // private mapInterval:any;
+  // private map:any;
+
+  constructor(private router: Router, logsService:LogsService) {
+    super(logsService);
 
     //On reconstruit les routes des liens en fonction du module et de l'index de l'onglet
     this.links.forEach((l) => {
@@ -47,6 +55,19 @@ export class AppComponent {
       this.logsService.send(`ROUTE ${route}`)
       this.activeLink = route;
     });
+
+  }
+
+
+  override ngOnInit(): void {
+      super.ngOnInit();
+
+      // this.mapInterval = setInterval(() => {
+      //   if(Module && Module.MapControl) {
+      //     clearInterval(this.mapInterval);
+      //     this.map = new Module.MapControl("carto");
+      //   }
+      // },500)
   }
 
   addTab(label:string, module:string) {
@@ -59,8 +80,6 @@ export class AppComponent {
     }
 
     this.links = [...this.links, link];
-
-    console.log(this.links)
 
     this.router.navigateByUrl(link.route);
   }

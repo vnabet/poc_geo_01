@@ -9,8 +9,10 @@ import { LogsService } from 'src/app/modules/services/logs.service';
 export class BaseComponent implements OnDestroy, OnInit {
 
   cname:string = 'BASE';
+  protected logsService:LogsService;
 
-  constructor(private logsService:LogsService) {
+  constructor(logsService:LogsService) {
+    this.logsService = logsService;
 
   }
   ngOnDestroy(): void {

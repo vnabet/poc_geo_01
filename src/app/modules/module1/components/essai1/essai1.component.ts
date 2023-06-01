@@ -1,4 +1,4 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component, HostBinding, OnDestroy } from '@angular/core';
 import { BaseComponent } from 'src/app/core/base/base.component';
 
 @Component({
@@ -8,6 +8,8 @@ import { BaseComponent } from 'src/app/core/base/base.component';
 })
 export class Essai1Component extends BaseComponent {
 
-  override cname: string = 'PARCELLAIRE'
+  override cname: string = 'PARCELLAIRE';
+
+  @HostBinding('class.tab-content') tabContentCls: boolean = true;
 
 }
