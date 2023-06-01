@@ -14,7 +14,7 @@ export class LogsService {
   send(log:string) {
     const date:Date = new Date();
     const logs = [`${date.toLocaleTimeString('fr-FR')} - ${log}`, ...this._logs];
-    this._logs = logs.length > 20?logs.slice(-20):logs;
+    this._logs = logs.length > 20?logs.slice(0,20):logs;
 
     this._logger.next(this._logs);
   }
