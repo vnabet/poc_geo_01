@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { CartoModule } from '../carto.module';
 
 @Injectable({
-  providedIn: CartoModule
+  providedIn: 'root'
 })
 export class CartoService {
 

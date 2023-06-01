@@ -8,6 +8,9 @@ import { CartoComponent } from './components/carto/carto.component';
   declarations: [
     CartoComponent
   ],
+  exports: [
+    CartoComponent
+  ],
   imports: [
     CommonModule
   ]
