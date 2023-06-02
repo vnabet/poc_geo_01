@@ -52,7 +52,7 @@ export class AppComponent extends BaseComponent {
         if(tab && tab.route !== route) tab.route = route;
       }
 
-      this.logsService.send(`ROUTE ${route}`)
+      this.logsService.send(`route ${route}`)
       this.activeLink = route;
     });
 

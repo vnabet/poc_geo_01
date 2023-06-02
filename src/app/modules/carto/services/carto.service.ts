@@ -42,7 +42,7 @@ export class CartoService {
         if(Module && Module.MapControl) {
           clearInterval(this.mapInterval);
           this.map = new Module.MapControl('carto-canvas');
-          logsService.send('WEBASSEMBLY CARTO');
+          logsService.send('----WEBASSEMBLY CARTO----');
         }
       },500)
   }
