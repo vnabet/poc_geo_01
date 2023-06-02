@@ -1,0 +1,7 @@
+.carto-div {
+  position: relative;
+  background-color: beige;
+  width: calc(100% - 40px);
+  min-height: 300px;
+  margin: 20px;
+}

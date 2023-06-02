@@ -14,7 +14,7 @@
     <mat-icon>agriculture</mat-icon>
     <span>Interventions</span>
   </button>
-  <button mat-menu-item>
+  <button mat-menu-item (click)="addTab('Plan d\'épandage', '/epandage')">
     <mat-icon>water_pump</mat-icon>
     <span>Plan d'épandage</span>
   </button>
@@ -69,7 +69,3 @@ aaa
 </mat-tab-nav-panel>
 
 <app-logs></app-logs>
-
-<div id="carto-div" style="background-color: red;">ESSAI</div>
-
-<!-- <canvas #canvas id="carto" width="640" height="480"></canvas> -->
